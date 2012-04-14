@@ -4,13 +4,13 @@
 
     <xsl:template match="/project" mode="contents">
 
-        <div class="hero-unit">
+        <!--<div class="hero-unit">
             <h1>
                 <xsl:value-of select="$title" disable-output-escaping="yes"/>
                 <xsl:if test="$title = ''">phpDocumentor</xsl:if>
             </h1>
             <h2>Documentation</h2>
-        </div>
+        </div>-->
 
         <div class="row">
             <div class="span7">
@@ -38,7 +38,7 @@
 
             </div>
             <div class="span5">
-                <div class="well">
+                <!--<div class="well">
                     <ul class="nav nav-list">
                         <li class="nav-header">Charts</li>
                         <li>
@@ -47,7 +47,7 @@
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div>-->
                 <div class="well">
                     <ul class="nav nav-list">
                         <li class="nav-header">Reports</li>

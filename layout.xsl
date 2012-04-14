@@ -107,9 +107,6 @@
 
     <xsl:template match="/" mode="content-footer">
         <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br />
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor <xsl:value-of select="$version"/></a><br />
-            Generated on <xsl:value-of select="date:date-time()" />.<br />
         </footer>
     </xsl:template>
 
