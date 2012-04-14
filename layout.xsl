@@ -75,67 +75,32 @@
     </xsl:template>
 
     <xsl:template match="/" mode="header">
+      <div class="topnav">
         <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span> <span class="icon-bar"></span>
-                        <span class="icon-bar"></span> </a>
-                    <a class="brand" href="{$root}index.html">
-                        <xsl:value-of select="$title" disable-output-escaping="yes"/>
-                        <xsl:if test="$title = ''">phpDocumentor</xsl:if>
-                    </a>
-
-                    <div class="nav-collapse">
-                        <ul class="nav">
-                            <li class="dropdown">
-                                <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <xsl:if test="/project/namespace/namespace">
-                                        <li><a>Namespaces</a></li>
-                                        <xsl:apply-templates select="/project/namespace" mode="menu">
-                                            <xsl:sort select="@full_name" />
-                                        </xsl:apply-templates>
-                                    </xsl:if>
-                                    <xsl:if test="/project/package/package or count(/project/package[@name != '']) > 1">
-                                        <li><a>Packages</a></li>
-                                        <xsl:apply-templates select="/project/package" mode="menu">
-                                            <xsl:sort select="@name" />
-                                        </xsl:apply-templates>
-                                    </xsl:if>
-                                </ul>
-                            </li>
-                            <li class="dropdown" id="charts-menu">
-                                <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                    Charts <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{$root}graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown" id="reports-menu">
-                                <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                    Reports <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <xsl:apply-templates select="/" mode="report-overview" />
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--<form class="navbar-search pull-right" onsubmit="$('.element:parent').show(); $('.element h1:not(:contains('+$('#search-query').val()+'))').parent().hide();return false;">-->
-                        <!--<input type="text" id="search-query" class="search-query" placeholder="Search" />-->
-                    <!--</form>-->
-                    <!--/.nav-collapse -->
-                </div>
+          <div class="navbar-inner">
+            <div class="container">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+              <div class="brand">
+                <strong>Proem</strong> Framework
+              </div>
+              <div class="nav-collapse">
+                <ul class="nav">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="https://proemframework.atlassian.net">Issues</a></li>
+                  <li><a href="/docs">Documentation</a></li>
+                  <li><a href="/api/namespaces/Proem.html">API</a></li>
+                  <li><a href="/contrib.html">Contribute</a></li>
+                  <li><a href="/about.html">About</a></li>
+                </ul>
+              </div>
             </div>
-            <div class="go_to_top">
-                <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-            </div>
+          </div>
         </div>
+      </div>
     </xsl:template>
 
     <xsl:template match="/" mode="footer"></xsl:template>
