@@ -7,7 +7,7 @@
   <description><![CDATA[
       This is the 'Responsive' look and feel for phpDocumentor.
 
-      This is a responsive template that is optimized to make the user's
+      This is a proem template that is optimized to make the user's
       experience paramount.
 
       To improve performance you can add the following to your .htaccess:
@@ -20,18 +20,18 @@
   ]]></description>
   <transformations>
     <transformation query="copy" writer="FileIo" source="images" artifact="img"/>
-    <transformation query="copy" writer="FileIo" source="templates/responsive/img" artifact="img"/>
-    <transformation query="copy" writer="FileIo" source="templates/responsive/css" artifact="css"/>
+    <transformation query="copy" writer="FileIo" source="templates/proem/img" artifact="img"/>
+    <transformation query="copy" writer="FileIo" source="templates/proem/css" artifact="css"/>
     <transformation query="copy" writer="FileIo" source="js" artifact="js"/>
-    <transformation query="copy" writer="FileIo" source="templates/responsive/js" artifact="js"/>
-    <transformation query="" writer="xsl" source="templates/responsive/index.xsl" artifact="index.html"/>
-    <transformation query="//namespace/@full_name" writer="xsl" source="templates/responsive/namespaces.xsl" artifact="namespaces/{$full_name}"/>
-    <transformation query="//package/@full_name" writer="xsl" source="templates/responsive/packages.xsl" artifact="packages/{$full_name}"/>
-    <transformation query="//class/full_name|//interface/full_name" writer="xsl" source="templates/responsive/class.xsl" artifact="classes/{$full_name}"/>
-    <transformation query="" writer="xsl" source="templates/responsive/reports/markers.xsl" artifact="markers.html"/>
-    <transformation query="" writer="xsl" source="templates/responsive/reports/errors.xsl" artifact="errors.html"/>
-    <transformation query="" writer="xsl" source="templates/responsive/reports/deprecated.xsl" artifact="deprecated.html"/>
-    <transformation query="" writer="xsl" source="templates/responsive/graphs/class.xsl" artifact="graph_class.html"/>
+    <transformation query="copy" writer="FileIo" source="templates/proem/js" artifact="js"/>
+    <transformation query="" writer="xsl" source="templates/proem/index.xsl" artifact="index.html"/>
+    <transformation query="//namespace/@full_name" writer="xsl" source="templates/proem/namespaces.xsl" artifact="namespaces/{$full_name}"/>
+    <transformation query="//package/@full_name" writer="xsl" source="templates/proem/packages.xsl" artifact="packages/{$full_name}"/>
+    <transformation query="//class/full_name|//interface/full_name" writer="xsl" source="templates/proem/class.xsl" artifact="classes/{$full_name}"/>
+    <transformation query="" writer="xsl" source="templates/proem/reports/markers.xsl" artifact="markers.html"/>
+    <transformation query="" writer="xsl" source="templates/proem/reports/errors.xsl" artifact="errors.html"/>
+    <transformation query="" writer="xsl" source="templates/proem/reports/deprecated.xsl" artifact="deprecated.html"/>
+    <transformation query="" writer="xsl" source="templates/proem/graphs/class.xsl" artifact="graph_class.html"/>
     <transformation query="" writer="Graph" source="Class" artifact="classes.svg" />
   </transformations>
 </template>
