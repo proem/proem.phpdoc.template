@@ -108,8 +108,8 @@
     <xsl:template match="/" mode="content-footer">
         <footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br />
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor <xsl:value-of select="$version"/></a> and<br />
-            generated on <xsl:value-of select="date:date-time()" />.<br />
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor <xsl:value-of select="$version"/></a><br />
+            Generated on <xsl:value-of select="date:date-time()" />.<br />
         </footer>
     </xsl:template>
 
@@ -142,6 +142,16 @@
         <link rel="apple-touch-icon" href="{$root}img/apple-touch-icon.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="{$root}img/apple-touch-icon-72x72.png" />
         <link rel="apple-touch-icon" sizes="114x114" href="{$root}img/apple-touch-icon-114x114.png" />
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-21713077-3']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
     </xsl:template>
 
     <xsl:template match="/">
