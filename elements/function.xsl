@@ -49,13 +49,13 @@
             <xsl:variable name="name" select="name"/>
             <xsl:variable name="tag" select="../docblock/tag[@name='param' and @variable=$name]" />
             <h4><xsl:value-of select="name"/></h4>
-            <code><xsl:apply-templates select="$tag/type" /></code>
+            <xsl:apply-templates select="$tag/type" mode="contents" />
             <xsl:value-of select="$tag/@description" disable-output-escaping="yes" />
         </div>
     </xsl:template>
 
     <xsl:template match="function|method" mode="contents">
-        <a name="{name}" id="{name}"></a>
+        <a id="{name}"></a>
         <div class="element clickable {local-name(.)} {@visibility} {name}" data-toggle="collapse" data-target=".{name} .collapse">
             <h2><xsl:apply-templates select="name" /></h2>
             <xsl:apply-templates select="name" mode="signature" />
@@ -66,18 +66,21 @@
                 <xsl:if test="inherited_from">
                     <span class="label">Inherited</span>
                 </xsl:if>
+                <xsl:if test="@static='true' or docblock/tag[@name='static']">
+                    <span class="label">Static</span>
+                </xsl:if>
             </div>
 
             <div class="row collapse">
                 <div>
                     <xsl:attribute name="class">
                         <xsl:if test="docblock/tag[@name='example']">span4</xsl:if>
-                        <xsl:if test="not(docblock/tag[@name='example'])">span8</xsl:if>
+                        <xsl:if test="not(docblock/tag[@name='example'])">detail-description</xsl:if>
                     </xsl:attribute>
 
-                    <p class="long_description">
+                    <div class="long_description">
                         <xsl:value-of select="docblock/long-description" disable-output-escaping="yes" />
-                    </p>
+                    </div>
 
                     <xsl:if test="count(docblock/tag[@name != 'return' and @name != 'param' and @name != 'throws' and @name != 'throw']) > 0">
                         <table class="table table-bordered">

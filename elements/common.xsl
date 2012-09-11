@@ -95,7 +95,18 @@
             </xsl:attribute>
 
             <a href="#{name}" title="{name} :: {docblock/description}">
-                <span class="description"><xsl:apply-templates select="name" /></span>
+                <xsl:variable name="desc">
+                    <xsl:apply-templates select="name" />
+                </xsl:variable>
+                <span class="description">
+                    <xsl:choose>
+                        <xsl:when test="name()='property'">
+                            <xsl:value-of select="substring-after(substring-before(string($desc), '&lt;/p&gt;'), '&lt;p&gt;')"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="$desc" />
+                        </xsl:otherwise>
+                    </xsl:choose></span>
                 <pre><xsl:value-of select="name" /><xsl:if test="local-name() = 'method'">()</xsl:if></pre>
             </a>
         </li>
@@ -104,11 +115,11 @@
     <xsl:template match="tag" mode="tabular">
         <tr>
             <th><xsl:value-of select="@name"/></th>
-            <td><xsl:value-of select="@description"/></td>
+            <td><xsl:value-of select="@description" disable-output-escaping="yes"/></td>
         </tr>
     </xsl:template>
 
-    <xsl:template match="tag[@name = 'license' or @name = 'link' or @name = 'author']" mode="tabular">
+    <xsl:template match="tag[@name = 'license' or @name = 'link' or @name = 'see' or @name = 'author']" mode="tabular">
         <tr>
             <th><xsl:value-of select="@name"/></th>
             <td>
@@ -129,7 +140,7 @@
         <tr>
             <th><xsl:value-of select="@name"/></th>
             <td>
-                <a href="{$root}/packages/{$link}.html">
+                <a href="{$root}packages/{$link}.html">
                     <xsl:value-of select="@description" />
                 </a>
             </td>
@@ -152,12 +163,6 @@
 
     <xsl:template match="namespace|package" mode="breadcrumb">
         <xsl:param name="active" select="'true'"/>
-        <xsl:if test="local-name(..) = local-name()">
-            <xsl:apply-templates select=".." mode="breadcrumb">
-                <xsl:with-param name="active" select="'false'" />
-            </xsl:apply-templates>
-            <span class="divider">\</span>
-        </xsl:if>
 
         <xsl:variable name="link">
             <xsl:call-template name="createLink">
@@ -165,8 +170,17 @@
             </xsl:call-template>
         </xsl:variable>
 
+        <xsl:if test="local-name(..) = local-name()">
+            <xsl:apply-templates select=".." mode="breadcrumb">
+                <xsl:with-param name="active" select="'false'" />
+            </xsl:apply-templates>
+        </xsl:if>
+
         <li>
             <xsl:if test="$active = 'true'"><xsl:attribute name="class">active</xsl:attribute></xsl:if>
+            <xsl:if test="local-name(..) = local-name()">
+                <span class="divider">\</span>
+            </xsl:if>
             <a href="{$root}{local-name()}s/{$link}.html"><xsl:value-of select="@name" /></a>
         </li>
     </xsl:template>
