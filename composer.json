@@ -1,9 +1,8 @@
 {
     "name": "proem/proem.phpdoc.template",
-    "type": "phpdocumentor-template",
-    "description": "Responsive modern template for phpDocumentor",
+    "description": "Proem phpDocumentor template",
     "keywords": ["documentation", "template", "phpdoc"],
-    "homepage": "http://www.phpdoc.org",
+    "homepage": "http://proemframework.org",
     "license": "MIT",
     "require": {
         "ext-xsl": "*"
