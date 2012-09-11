@@ -1,5 +1,5 @@
 {
-    "name": "phpdocumentor/template-responsive",
+    "name": "proem/proem.phpdoc.template",
     "type": "phpdocumentor-template",
     "description": "Responsive modern template for phpDocumentor",
     "keywords": ["documentation", "template", "phpdoc"],
