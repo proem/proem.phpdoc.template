@@ -105,8 +105,8 @@
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">API</a>
                     <ul class="dropdown-menu">
-                      <li><a href="/api/current">Current</a></li>
-                      <li><a href="/api/dev">Development</a></li>
+                        <li><a href="/api/current/namespaces/Proem.html">Current</a></li>
+                        <li><a href="/api/dev/namespaces/Proem.html">Development</a></li>
                     </ul>
                   </li>
                   <li><a href="/contrib.html">Contribute</a></li>
