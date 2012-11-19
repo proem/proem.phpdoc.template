@@ -76,6 +76,49 @@
     </xsl:template>
 
     <xsl:template match="/" mode="header">
+
+    <div class="topnav">
+        <div class="navbar navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container">
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+              <div class="brand">
+                <a href="/">
+                  <strong>Proem</strong> Framework
+                </a>
+              </div>
+              <div class="nav-collapse">
+                <ul class="nav">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/blog">Blog</a></li>
+                  <li><a href="https://github.com/proem/proem/issues">Issue Tracker</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentation</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/docs/current">Current</a></li>
+                      <li><a href="/docs/dev">Development</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">API</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/api/current">Current</a></li>
+                      <li><a href="/api/dev">Development</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="/contrib.html">Contribute</a></li>
+                  <li><a href="/about.html">About</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
       <div class="topnav">
         <div class="navbar navbar-fixed-top">
           <div class="navbar-inner">
