@@ -21,6 +21,12 @@ li.l0, li.l1, li.l2, li.l3, li.l5, li.l6, li.l7, li.l8
     list-style-type: decimal;
 }
 
+div.brand a
+{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
 a.brand, h2, .hero-unit h1
 {
     font-family: 'Forum', "Helvetica Neue", Helvetica, Arial, sans-serif;
