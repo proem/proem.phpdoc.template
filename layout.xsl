@@ -76,8 +76,7 @@
     </xsl:template>
 
     <xsl:template match="/" mode="header">
-
-    <div class="topnav">
+      <div class="topnav">
         <div class="navbar navbar-fixed-top">
           <div class="navbar-inner">
             <div class="container">
@@ -110,33 +109,6 @@
                       <li><a href="/api/dev">Development</a></li>
                     </ul>
                   </li>
-                  <li><a href="/contrib.html">Contribute</a></li>
-                  <li><a href="/about.html">About</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-
-      <div class="topnav">
-        <div class="navbar navbar-fixed-top">
-          <div class="navbar-inner">
-            <div class="container">
-              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </a>
-              <div class="brand">
-                <strong>Proem</strong> Framework
-              </div>
-              <div class="nav-collapse">
-                <ul class="nav">
-                  <li><a href="/">Home</a></li>
-                  <li><a href="https://proemframework.atlassian.net">Issues</a></li>
-                  <li><a href="/docs">Documentation</a></li>
-                  <li><a href="/api/namespaces/Proem.html">API</a></li>
                   <li><a href="/contrib.html">Contribute</a></li>
                   <li><a href="/about.html">About</a></li>
                 </ul>
